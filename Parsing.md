@@ -19,9 +19,11 @@ Each image entry consists of the following components:
 Colors are encoded in a 9-bit format, allowing for a reduced color palette:
 - If the alpha value of a pixel is 0 (transparent), the pixel value is stored as 0.
 - For non-transparent pixels, the RGB values are each divided by 32, reducing the granularity. The encoded value is calculated as follows:
+```latex
   \[
   \text{encoded\_value} = (\text{r} // 32) \times 64 + (\text{g} // 32) \times 8 + (\text{b} // 32) + 1
   \]
+```
 
 #### Decoding Colors
 The decoding process reverses the encoding steps:
